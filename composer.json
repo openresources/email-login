@@ -1,0 +1,55 @@
+{
+    "name": "openresources/email-login",
+    "description": "A simple passwordless email login package for your Laravel application",
+    "keywords": [
+        "openresources",
+        "email-login"
+    ],
+    "homepage": "https://github.com/openresources/email-login",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Eviano Afiemo",
+            "email": "evianoa@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/canvas": "^5.0",
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Openresources\\EmailLogin\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Openresources\\EmailLogin\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Openresources\\EmailLogin\\EmailLoginServiceProvider"
+            ],
+            "aliases": {
+                "EmailLogin": "Openresources\\EmailLogin\\EmailLoginFacade"
+            }
+        }
+    }
+}
