@@ -1,0 +1,27 @@
+preset: package
+
+namespace: Openresources\EmailLogin
+user-auth-provider: App\User
+
+paths:
+  src: src
+  resource: resources
+
+factory:
+  path: database/factories
+
+migration:
+  path: database/migrations
+  prefix: ''
+
+console:
+  namespace: Openresources\EmailLogin\Console
+
+model:
+  namespace: Openresources\EmailLogin
+
+provider:
+  namespace: Openresources\EmailLogin\Providers
+
+testing:
+  namespace: Openresources\EmailLogin\Tests

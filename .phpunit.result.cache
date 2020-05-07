@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":304:{a:2:{s:7:"defects";a:1:{s:80:"Openresources\EmailLogin\Tests\Feature\EmailLoginTest::testDatabaseIsIntelligent";i:4;}s:5:"times";a:2:{s:80:"Openresources\EmailLogin\Tests\Feature\EmailLoginTest::testDatabaseIsIntelligent";d:5.671;s:56:"Openresources\EmailLogin\Tests\ExampleTest::true_is_true";d:0.403;}}}
