@@ -30,7 +30,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Openresources\\EmailLogin\\Tests\\": "tests"
+            "Openresources\\EmailLogin\\Tests\\": "tests",
+            "Tests\\App\\": "tests\\app"
         }
     },
     "scripts": {
@@ -50,5 +51,5 @@
             }
         }
     },
-    "version": "1.1.0"
+    "version": "1.2.0"
 }
