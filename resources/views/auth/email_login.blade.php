@@ -2,7 +2,7 @@
 
 @section('page__title', 'Email Login')
 
-@section('content')
+@section('page')
 <div class="container mx-auto">
     <div class="flex flex-col flex-wrap items-center justify-start">
         <p class="bg-gray-400 opacity-75 rounded mb-4 font-medium text-lg 

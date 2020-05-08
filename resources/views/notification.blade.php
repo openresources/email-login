@@ -2,7 +2,7 @@
 
 {{-- @section('page__title', "{$pageTitle ?? 'Notice'} - {$message}") --}}
 
-@section('content')
+@section('page')
 <div class="container mx-auto">
     @if (session('status'))
     <div class="alert alert-success">
