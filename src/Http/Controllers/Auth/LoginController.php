@@ -45,7 +45,7 @@ class LoginController extends Controller
         $url = route('email-login.authenticate', $emailLogin->token);
 
         Mail::to($emailLogin->user)
-        ->send(new VerifyEmailAddress($url, $emailLogin->user->name))
+            ->send(new VerifyEmailAddress($url, $emailLogin->user->name))
         ;
 
         $request->session()->flash('status', 'A verification email has been sent to the email address you provided.');
@@ -67,7 +67,10 @@ class LoginController extends Controller
             abort('419', 'Expired token');
         }
 
-        Auth::login($emailLogin->user);
+        $user = $emailLogin->user;
+
+        Auth::login($user);
+        $emailLogin->markEmailAsVerified($user);
 
         $request->session()->flash('status', __('Your email address has been verified. Please set your account password to continue'));
 

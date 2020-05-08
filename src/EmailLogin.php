@@ -11,11 +11,6 @@ class EmailLogin extends Model
 {
     protected $fillable = ['email', 'token', 'user_id'];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
     public static function createForEmail($email)
     {
         $user = User::where('email', $email)->first();
@@ -31,6 +26,23 @@ class EmailLogin extends Model
                 'user_id' => $user->id,
             ]
         );
+    }
+
+    public function hasVerifiedEmail(User $user)
+    {
+        return $user->hasVerifiedEmail();
+    }
+
+    public function markEmailAsVerified(User $user)
+    {
+        return $user->forceFill([
+            'email_verified_at' => $this->freshTimestamp(),
+        ])->save();
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function scopeFromToken($query, String $token)
