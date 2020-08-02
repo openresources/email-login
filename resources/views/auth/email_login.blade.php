@@ -11,14 +11,10 @@
         <div class="w-full max-w-sm">
             <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 
-                <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
-                    {{ __('Login') }}
-                </div>
-
                 <form class="w-full p-6" method="POST" action="{{ route('email-login.login') }}">
                     @csrf
 
-                    <div class="flex flex-wrap mb-6">
+                    <div class="form-row">
                         <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
                             {{ __('E-Mail Address') }}:
                         </label>
@@ -34,9 +30,9 @@
                         @enderror
                     </div>
 
-                    <div class="flex flex-wrap items-center">
+                    <div class="form-row">
                         <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-gray-100 uppercase py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            class="btn btn-primary">
                             {{ __('Verify email') }}
                         </button>
                     </div>
