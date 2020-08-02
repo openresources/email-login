@@ -15,6 +15,23 @@ You can install the package via composer:
 composer require openresources/email-login
 ```
 
+APP_ASSETS_PATH
+
+## Post-install Tasks & Requirements
+
+### Requirements
+
+1. Roles relationship in the User module
+2. Queues enabled for email sending
+
+### Tasks
+
+1. **Set Environment Variables**
+
+    ``` config
+    APP_ASSETS_PATH=vendor/user-manager
+    ```
+
 ## Usage
 
 ``` php
