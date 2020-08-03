@@ -1,6 +1,6 @@
 {
     "name": "email-login",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "main": "index.js",
     "repository": "git@github.com:openresources/email-login.git",
     "author": "Eviano Afiemo <6235534+evianoa@users.noreply.github.com>",
