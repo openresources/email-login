@@ -23,7 +23,7 @@
 
                     <input type="hidden" name="token" value="{{ $token }}">
                     
-                    <div class="flex flex-wrap mb-6">
+                    <div class="form-row">
                         <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
                             {{ __('Password') }}:
                         </label>
@@ -39,7 +39,7 @@
                         @enderror
                     </div>
 
-                    <div class="flex flex-wrap mb-6">
+                    <div class="form-row">
                         <label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2">
                             {{ __('Confirm Password') }}:
                         </label>
@@ -48,7 +48,7 @@
                             name="password_confirmation" required autocomplete="new-password">
                     </div>
 
-                    <div class="flex flex-wrap">
+                    <div class="form-row">
                         <button type="submit"
                             class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold  py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                             {{ __('Reset Password') }}
