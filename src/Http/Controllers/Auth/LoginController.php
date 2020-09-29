@@ -42,15 +42,24 @@ class LoginController extends Controller
 
         $emailLogin = EmailLogin::createForEmail($request->email);
 
-        $url = route('email-login.authenticate', $emailLogin->token);
+        // $url = route('email-login.authenticate', $emailLogin->token);
 
-        Mail::to($emailLogin->user)
-            ->send(new VerifyEmailAddress($url, $emailLogin->user->name))
-        ;
+        // Mail::to($emailLogin->user)
+        //     ->send(new VerifyEmailAddress($url, $emailLogin->user->name))
+        // ;
 
-        $request->session()->flash('status', 'A verification email has been sent to the email address you provided.');
+        // $request->session()->flash('status', 'A verification email has been sent to the email address you provided.');
 
-        return view('email-login::notification');
+        // return view('email-login::notification');
+
+        $user = $emailLogin->user;
+
+        Auth::login($user);
+        $emailLogin->markEmailAsVerified($user);
+
+        $request->session()->flash('status', __('Your email address has been verified. Please set your account password to continue'));
+
+        return redirect()->route('email-login.password.reset');
     }
 
     protected function validateLogin(Request $request)
